@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Developers Search{% endblock title %}
+{% block body %}
+<div class="container-fluid" style="width: 100%; height: 270px; background: gray;">
+    <div class="container  ">
+        <h1 style="text-align: center; font-size: 35px  ">CONNECT WITH <b> DEVELOPERS</b> <br>
+            FROM AROUND THE WORLD</h1>
+            <div class="row" style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+            <div class="col col-lg-6">
+            <form class="d-flex" action="http://127.0.0.1:8000/devsearch/" method="get"> 
+                <input class="form-control me-2 bg-light" style="color: black;" type="search" required name="queryset" placeholder="Search Developers from World-Wide" aria-label="Search">
+                <button class="btn btn-danger" type="submit">Search</button>
+              </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container mt-5">
+    <div class="row">
+        {% for i in items %}
+        <div class="col col-lg-4">
+          <a style="text-decoration: none; color: black;" href="http://127.0.0.1:8000/developerdetail/{{i.id}}/"> 
+            <div class="card text-left">
+                <p style="text-align: center;">
+              <img class="card-img-top mt-2" src="{{i.prof_img.url}}" style="align-items: center;   width: 100px; height: 100px; border-radius: 50%; border: 2px solid blue;" alt="">
+            </p>
+              <div class="card-body">
+                <h4 class="card-title">{{i.name}}</h4>
+                <p class="card-text">{{i.short_intro}}</p>
+                <span style="background-color: green; color: white;"  >{{i.skills}}</span> </a>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock body %} 

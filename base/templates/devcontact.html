@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+  <div class="container">
+      <h2 class="text-center mt-3 mb-3" style="background: red; color: white;">Contact Developer</h2>
+      <div class="row" style="display: flex; align-items: center; justify-content: center;">
+          <div class="col col-lg-7">
+              <form action="" method="post">{% csrf_token %}
+               
+               <div class="form-group"> 
+               <label for="">E-Mail</label>
+                 <input type="email" name="email" id="" class="form-control" placeholder="Put your email here....." aria-describedby="helpId">
+              
+               </div>
+               <div class="form-group">
+                <label for="">Subject</label>
+                <input type="text" name="name" id="" class="form-control" placeholder="What you want from developer..." aria-describedby="helpId">
+             
+              </div>
+               <div class="form-group"> 
+               <label for="">Message</label>
+                 <textarea type="text" name="message" id="" class="form-control" placeholder="Briefly describe your message..." aria-describedby="helpId">
+                 </textarea>
+                </div>
+               
+               <input type="hidden" name="user_id" value="{{user_id}}">
+               <input type="submit" class="btn btn-outline-info mt-2" value="Submit">
+              </form>
+            
+      </div>
+  </div>
+</div>
+
+{% endblock body %}

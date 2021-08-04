@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<style>
+    body{
+        background-color: #383B4E;
+    }
+</style>
+<div class="container">
+<div class="row">
+       
+         
+    <div class="col col-lg-5 mt-5"  >
+         <div style="color: white; ">
+        <img src="{{item.prof_img.url}}"class=" mx-auto d-block w-100 p-2 "  style="align-items: center;   width: 100%; height:auto;   border: 2px solid blue;" >
+         <p class="btn btn-success mt-2"  ><a style="text-decoration: none; color: black ;" href="http://127.0.0.1:8000/developerdetail/devcontact/{{item.id}}/" >Send Message</a></p>
+    </div>
+
+       
+    </div>
+    <div class="col col-lg-4 mt-4">
+        <div style="color: white; margin-top: 20px;" >
+            <h2 >{{item.name}}</h2>  
+        <div  class="mt-2 mb-3" >Based in {{item.location}} </div>
+            <h2>About Me</h2>
+            <p>{{item.short_intro}}</p>
+            <h2>Bio</h2>
+            <p>{{item.bio}}</p>
+            <h2 class="mt-2">SKILLS</h2> 
+            <p>{{item.skills}}</p> 
+            <h2 class="mt-2">Contact Details:</h2> 
+            <p>{{item.user.email}}</p> 
+            <hr>
+            
+        </div>
+    </div>
+    
+</div>
+   
+       
+</div>
+ 
+
+
+      {% endblock body %}      

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}Add Details{% endblock title %}
+{%  block body %}
+<style>
+    body{
+        background-color: #383B4E;
+    }
+</style>
+<div class="container">
+<h2 style="color: white; background: rgb(148, 5, 5); text-align: center; margin-top: 5px;">Add your Details</h2></div>
+
+<div class="container"   >
+    <div class="row"  style="display: flex; align-items: center; justify-content: center;">
+        
+        <div class="col col-lg-8   " style="color: white;  box-shadow: 5px 2px 2px 2px white;">
+            <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+           <div class="form-group">
+             <label for="">Name</label>
+             <input type="text" name="name" id="" class="form-control" placeholder="Enter your Name here..." aria-describedby="helpId">
+              
+           </div>
+           <div class="form-group">
+            <label for="">E-Mail</label>
+            <input type="text" name="email" id="" class="form-control" placeholder="Enter your E-Mail here..." aria-describedby="helpId">
+             
+          </div>
+          <div class="form-group">
+            <label for="">Location</label>
+            <input type="text" name="location" id="" class="form-control" placeholder="Enter your Location here..." aria-describedby="helpId">
+             
+          </div>
+          <div class="form-group">
+            <label for="">Short Intro</label>
+            <input type="text" name="short_intro" id="" class="form-control" placeholder="Write here 2 or 3 lines..." aria-describedby="helpId">
+             
+          </div>
+          <div class="form-group">
+            <label for="">Bio</label>
+            <textarea type="text" name="bio" id="" class="form-control" placeholder="Write here more than 2 or 3 lines..." aria-describedby="helpId"></textarea>
+             
+          </div>
+          <div class="form-group">
+            <label for="">Profile Image</label>
+            <input type="file" name="prof_img" id="" class="form-control" placeholder="" aria-describedby="helpId">
+             
+          </div>
+          <div class="form-group">
+            <label for="">Social github</label>
+            <input type="text" name="social_links_git" id="" class="form-control" placeholder="Social GitHub link..." aria-describedby="helpId">
+             
+          </div>
+          <div class="form-group">
+            <label for="">Skills</label>
+            <input type="text" name="skills" id="" class="form-control" placeholder="Your Skills...." aria-describedby="helpId">
+             
+          </div>
+         <input type="hidden" name="user_id" value="{{user.id}}" >
+         <input type="submit" class="btn btn-success mt-2" value="Add Details">
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{%  endblock body %}

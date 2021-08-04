@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}My Profile{% endblock title %}
+{%  block body %}
+<style>
+    body{
+        background-color: #383B4E;
+    }
+</style>
+<div class="container mt-2">
+    
+    <p>
+        {% if item.id %}
+        <a href="http://127.0.0.1:8000/editdetails/{{item.id}}/" style="border-radius: 15%; float: right; " class="btn btn-secondary mt-2  ">+ Edit Details</a>
+    
+        {% else %}
+  
+        <a href="http://127.0.0.1:8000/adddetails/" style="border-radius: 15%; float: right; " class="btn btn-secondary mt-2  ">+ Add Details</a>
+        {% endif %}
+    </p>
+    
+    
+    <div class="row">
+       
+         
+        <div class="col col-lg-5 mt-5"  >
+             <div style="color: white; ">
+            <img src="{{item.prof_img.url}}"class=" mx-auto d-block w-100 p-2 "  style="align-items: center;   width: 100%; height:auto;   border: 2px solid blue;" >
+            
+        </div>
+
+           
+        </div>
+        <div class="col col-lg-4 mt-4">
+            <div style="color: white; margin-top: 20px;" >
+                <h2 >{{item.name}}</h2>  
+            <div  class="mt-2 mb-5" >Based in {{item.location}} </div>
+                <h2>About Me</h2>
+                <p>{{item.short_intro}}</p>
+                <!-- <h2>Bio</h2>
+                <p>{{item.bio}}</p> -->
+                <h2 class="mt-5">SKILLS</h2> 
+                <p>{{item.skills}}</p> 
+                <h2 class="mt-5">PROJECTS</h2>
+                <p> <a href="http://127.0.0.1:8000/account/addproject/">
+                    Add Projects</a></p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+ <hr style="color: white;">
+ <div class="container" style="color: black;">
+     <h2 class="display-2 text-center mb-5" style="color: white;"  >My Projects</h2>
+     <div class="row">
+         {% for i in myproj %}
+         <div class="col col-lg-4">
+             <div class="card text-left">
+                 <a  style="text-decoration: none; color: black ;" href="http://127.0.0.1:8000/account/myprojects/{{i.id}}/">
+               <img class="card-img-top" src="{{i.project_img.url}}" alt="">
+               <div class="card-body">
+                 <h4   class="card-title " >{{i.project_title}}</h4>
+                 <p  class="card-text"  >{{i.project_desc}}</p></a>
+               </div>
+             </div>
+         </div>
+         {% endfor %}
+     </div>
+ </div>
+{% endblock body %}

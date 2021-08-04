@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}MY Projects{% endblock title %}
+
+{% block body %}
+<div class="container mt-5">
+    <img src="{{item.project_img.url}}" style="width: 100%; height: 400px; margin-bottom: 40px;" alt="">
+ 
+<h1>{{item.project_title}}</h1>
+<h6><b> By:</b> {{item.user.username}}</h6>
+<label for=""><b> Detail View:</b></label>
+<p>{{item.project_desc }} </p>
+<label   for=""><b> Link:</b></label>
+      {{item.project_link}}  <br>
+      <label class="mb-4" for=""><b> Developer Contact:</b></label> 
+      {{item.user.email}}
+
+</div>
+
+
+
+
+
+
+{% endblock body %}

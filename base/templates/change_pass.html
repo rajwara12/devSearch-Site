@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Change Password{% endblock title %}
+{% block body %}
+<style>
+
+    body{
+        background-color: #383B4E;
+    }
+</style>
+<div class="container" style="margin-bottom: 350px;">
+    <h2 class="text-center mt-2" style="color: white;">
+        Change Password
+    </h2>
+    <div class="container border 18px solid black border-rounded mt-2 col-lg-4">
+    <form   method="post">{% csrf_token %}
+ <div class="form-group">
+   <label for="" style="color: white;">Password</label>
+   <input type="password" required name="newpass" id="" class="form-control" placeholder="**********" aria-describedby="helpId">
+
+ </div>
+ <label for="" style="color: white;">Confirm Password</label>
+ <input type="password" required name="newpass1" id="" class="form-control" placeholder="**********" aria-describedby="helpId">
+  
+
+<input type="hidden"  name="user_id" value="{{user_id}}" class="form-control"  aria-describedby="helpId">
+
+<input type="submit"  class="btn btn-success mt-1 mb-1" value="Submit">
+    </form>
+</div>
+</div>
+ 
+
+
+{% endblock body %}

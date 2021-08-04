@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Add Project{% endblock title %}
+
+ 
+ 
+{%  block body %}
+<style>
+    body{
+        background-color: #383B4E;
+    }
+</style>
+<div class="container" style="color: white;">
+    <h2 style="background-color: red; text-align: center; margin-top: 20px;">Add your Project Here</h2>
+    <div class="row"  style="display: flex; align-items: center; justify-content: center;">
+       
+    <div  class="col col-lg-8">
+      <form action="" method="post" style="margin-top: 20px;" enctype="multipart/form-data"> {% csrf_token %} 
+        <div class="form-group">
+          <label for="">Project Title</label>
+          <input type="text" name="project_title" id="" class="form-control" placeholder="" aria-describedby="helpId">
+         
+        </div>
+        <div class="form-group">
+            <label for="">Project Description</label>
+            <textarea type="text" name="project_desc" id="" class="form-control" placeholder="" aria-describedby="helpId"></textarea>
+           
+          </div>
+          <div class="form-group">
+            <label for="">Project Link</label>
+            <input type="text" name="project_link" id="" class="form-control" placeholder="" aria-describedby="helpId">
+           
+          </div>
+          <div class="form-group">
+            <label for="">Project Image</label>
+            <input type="file" name="project_img" id="" class="form-control" placeholder="" aria-describedby="helpId">
+           
+          </div>
+          <input type="hidden" name="user_id" value="{{user.id}}" >
+          
+          <input type="submit" class="btn btn-success mt-2" value="Add Project">
+    </form>
+    </div>
+    </div>
+    
+    
+</div>
+
+
+
+
+{% endblock body %}
